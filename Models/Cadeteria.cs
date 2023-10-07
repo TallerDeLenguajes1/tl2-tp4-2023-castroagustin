@@ -30,15 +30,15 @@ public class Cadeteria
         listadoCadetes.Add(new Cadete(1, "Agustin", "Av. Roca 1000", "3811111111"));
         listadoCadetes.Add(new Cadete(2, "Geronimo", "Av. Avellaneda 490", "3811111112"));
         listadoCadetes.Add(new Cadete(3, "Luca", "Laprida 739", "3811111113"));
-    } 
+    }
 
-     public static Cadeteria GetCadeteria()
+    public static Cadeteria GetCadeteria()
     {
-        if (cadeteria ==null)
+        if (cadeteria == null)
         {
-            cadeteria  = new Cadeteria();
+            cadeteria = new Cadeteria();
         }
-        return cadeteria ;
+        return cadeteria;
     }
 
     public void CrearPedido(int cadId, int nroP, string obs, string cliNom, string cliDir, string cliTel, string cliRef)
@@ -48,17 +48,22 @@ public class Cadeteria
         ListadoPedidos.Add(nuevoPedido);
     }
 
-    public Pedido AgregarPedido (Pedido pedido) {
-        cadeteria.listadoPedidos.Add(pedido);
-        pedido.Nro = listadoPedidos.Count + 1;
+    public Pedido AgregarPedido(Pedido pedido)
+    {
+        if (pedido != null)
+        {
+            listadoPedidos.Add(pedido);
+            pedido.Nro = listadoPedidos.Count;
+            pedido.Estado = Estados.Pendiente;
+        }
         return pedido;
     }
-
     public Pedido CambiarEstadoPedido(int idP, int estadoNuevo)
     {
-        Estados nuevoEstado = (Estados) estadoNuevo;
+        Estados nuevoEstado = (Estados)estadoNuevo;
         Pedido? pedido = listadoPedidos.Find(ped => ped.Nro == idP);
-        if(pedido != null){
+        if (pedido != null)
+        {
             pedido.CambiarEstado(nuevoEstado);
         }
         return pedido;
@@ -68,7 +73,8 @@ public class Cadeteria
     {
         Pedido? pedido = listadoPedidos.Find(ped => ped.Nro == idP);
         Cadete? cadete = listadoCadetes.Find(cad => cad.Id == idCadN);
-        if(pedido != null & cadete != null){
+        if (pedido != null & cadete != null)
+        {
             pedido.IdCadete = idCadN;
         }
         return pedido;
@@ -100,11 +106,13 @@ public class Cadeteria
         return null;
     }
 
-    public List<Pedido> DevolverPedidos() {
+    public List<Pedido> DevolverPedidos()
+    {
         return listadoPedidos;
     }
 
-    public List<Cadete> DevolverCadetes() {
+    public List<Cadete> DevolverCadetes()
+    {
         return listadoCadetes;
     }
 }

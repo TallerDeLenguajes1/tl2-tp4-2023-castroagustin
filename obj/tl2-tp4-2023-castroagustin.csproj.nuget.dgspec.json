@@ -1,32 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "C:\\repos\\tp4\\tl2-tp4-2023-castroagustin\\tl2-tp4-2023-castroagustin.csproj": {}
+    "D:\\Disco Nuevo\\FACET\\C IV\\TLII\\repos\\tl2-tp4-2023-castroagustin\\tl2-tp4-2023-castroagustin.csproj": {}
   },
   "projects": {
-    "C:\\repos\\tp4\\tl2-tp4-2023-castroagustin\\tl2-tp4-2023-castroagustin.csproj": {
+    "D:\\Disco Nuevo\\FACET\\C IV\\TLII\\repos\\tl2-tp4-2023-castroagustin\\tl2-tp4-2023-castroagustin.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\repos\\tp4\\tl2-tp4-2023-castroagustin\\tl2-tp4-2023-castroagustin.csproj",
+        "projectUniqueName": "D:\\Disco Nuevo\\FACET\\C IV\\TLII\\repos\\tl2-tp4-2023-castroagustin\\tl2-tp4-2023-castroagustin.csproj",
         "projectName": "tl2-tp4-2023-castroagustin",
-        "projectPath": "C:\\repos\\tp4\\tl2-tp4-2023-castroagustin\\tl2-tp4-2023-castroagustin.csproj",
-        "packagesPath": "C:\\Users\\Alumno\\.nuget\\packages\\",
-        "outputPath": "C:\\repos\\tp4\\tl2-tp4-2023-castroagustin\\obj\\",
+        "projectPath": "D:\\Disco Nuevo\\FACET\\C IV\\TLII\\repos\\tl2-tp4-2023-castroagustin\\tl2-tp4-2023-castroagustin.csproj",
+        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
+        "outputPath": "D:\\Disco Nuevo\\FACET\\C IV\\TLII\\repos\\tl2-tp4-2023-castroagustin\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Alumno\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net7.0": {
+            "targetAlias": "net7.0",
             "projectReferences": {}
           }
         },
@@ -37,12 +35,16 @@
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net7.0": {
+          "targetAlias": "net7.0",
           "dependencies": {
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.2.3, )"
+              "version": "[6.5.0, )"
             }
           },
           "imports": [
@@ -64,7 +66,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

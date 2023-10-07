@@ -14,6 +14,14 @@ public class Pedido
     public Cliente? Cliente { get => cliente; set => cliente = value; }
     public int IdCadete { get => idCadete; set => idCadete = value; }
 
+    public Pedido()
+    {
+        Nro = 0;
+        Obs = "";
+        Cliente = new Cliente("", "", "", "");
+        IdCadete = 0;
+        Estado = Estados.Pendiente;
+    }
     public Pedido(int idCadete, int nro, string obs, Cliente cliente)
     {
         this.idCadete = idCadete;

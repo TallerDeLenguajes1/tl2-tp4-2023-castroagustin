@@ -31,3 +31,6 @@ D:\Disco Nuevo\FACET\C IV\TLII\repos\tl2-tp4-2023-castroagustin\obj\Debug\net7.0
 D:\Disco Nuevo\FACET\C IV\TLII\repos\tl2-tp4-2023-castroagustin\obj\Debug\net7.0\tl2-tp4-2023-castroagustin.pdb
 D:\Disco Nuevo\FACET\C IV\TLII\repos\tl2-tp4-2023-castroagustin\obj\Debug\net7.0\tl2-tp4-2023-castroagustin.genruntimeconfig.cache
 D:\Disco Nuevo\FACET\C IV\TLII\repos\tl2-tp4-2023-castroagustin\obj\Debug\net7.0\ref\tl2-tp4-2023-castroagustin.dll
+D:\Disco Nuevo\FACET\C IV\TLII\repos\tl2-tp4-2023-castroagustin\bin\Debug\net7.0\cadeteria.json
+D:\Disco Nuevo\FACET\C IV\TLII\repos\tl2-tp4-2023-castroagustin\bin\Debug\net7.0\cadetes.json
+D:\Disco Nuevo\FACET\C IV\TLII\repos\tl2-tp4-2023-castroagustin\bin\Debug\net7.0\pedidos.json

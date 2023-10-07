@@ -1,0 +1,38 @@
+[
+    {
+        "Nro": 1,
+        "Obs": "nada",
+        "Estado": 0,
+        "Cliente": {
+            "Nombre": "Ezequiel",
+            "Direccion": "Aconquija",
+            "Telefono": "3812938",
+            "DatosReferenciaDireccion": ""
+        },
+        "IdCadete": 0
+    },
+    {
+        "Nro": 2,
+        "Obs": "hola",
+        "Estado": 1,
+        "Cliente": {
+            "Nombre": "Diego",
+            "Direccion": "Roca 232",
+            "Telefono": "31241",
+            "DatosReferenciaDireccion": "no hay"
+        },
+        "IdCadete": 0
+    },
+    {
+        "Nro": 3,
+        "Obs": "pedido api",
+        "Estado": 0,
+        "Cliente": {
+            "Nombre": "agustin",
+            "Direccion": "juan posse",
+            "Telefono": "381",
+            "DatosReferenciaDireccion": "casa"
+        },
+        "IdCadete": 1
+    }
+]

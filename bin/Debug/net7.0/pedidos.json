@@ -1,0 +1,26 @@
+[
+    {
+        "Nro": 1,
+        "Obs": "nada",
+        "Cliente": {
+            "Nombre": "Ezequiel",
+            "Direccion": "Aconquija",
+            "Telefono": "3812938",
+            "DatosReferenciaDireccion": ""
+        },
+        "Estado": 0,
+        "IdCadete": 0
+    },
+    {
+        "Nro": 2,
+        "Obs": "hola",
+        "Cliente": {
+            "Nombre": "Diego",
+            "Direccion": "Roca 232",
+            "Telefono": "31241",
+            "DatosReferenciaDireccion": "no hay"
+        },
+        "Estado": 0,
+        "IdCadete": 0
+    }
+]

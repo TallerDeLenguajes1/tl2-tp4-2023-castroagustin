@@ -6,7 +6,8 @@ public class Cadeteria
     private string telefono;
     private List<Cadete> listadoCadetes;
     private List<Pedido> listadoPedidos;
-    private static Cadeteria cadeteria;
+    private static Cadeteria instance;
+    private AccesoADatosPedidos accesoADatosPedidos;
 
     public string Nombre { get => nombre; set => nombre = value; }
     public string Telefono { get => telefono; set => telefono = value; }
@@ -21,7 +22,7 @@ public class Cadeteria
     }
     public Cadeteria()
     {
-        listadoPedidos = new List<Pedido>();
+        /* listadoPedidos = new List<Pedido>();
         nombre = "Cadeteria de prueba";
         listadoPedidos.Add(new Pedido(1, "primer pedido", new Cliente("Agustin", "direc", "381", "aaa")));
         listadoPedidos.Add(new Pedido(2, "segundo pedido", new Cliente("Agustin", "direc", "382", "bbb")));
@@ -29,16 +30,23 @@ public class Cadeteria
         listadoCadetes = new List<Cadete>();
         listadoCadetes.Add(new Cadete(1, "Agustin", "Av. Roca 1000", "3811111111"));
         listadoCadetes.Add(new Cadete(2, "Geronimo", "Av. Avellaneda 490", "3811111112"));
-        listadoCadetes.Add(new Cadete(3, "Luca", "Laprida 739", "3811111113"));
+        listadoCadetes.Add(new Cadete(3, "Luca", "Laprida 739", "3811111113")); */
     }
 
-    public static Cadeteria GetCadeteria()
+    public static Cadeteria GetInstance()
     {
-        if (cadeteria == null)
+        if (instance == null)
         {
-            cadeteria = new Cadeteria();
+            instance = new Cadeteria();
+            var accesoADatosCadeteria = new AccesoADatosCadeteria();
+            var accesoADatosCadetes = new AccesoADatosCadetes();
+            var accesoADatosPedidos = new AccesoADatosPedidos();
+            instance = accesoADatosCadeteria.Obtener();
+            instance.accesoADatosPedidos = accesoADatosPedidos;
+            instance.listadoPedidos = accesoADatosPedidos.Obtener();
+            instance.listadoCadetes = accesoADatosCadetes.Obtener();
         }
-        return cadeteria;
+        return instance;
     }
 
     public void CrearPedido(int cadId, int nroP, string obs, string cliNom, string cliDir, string cliTel, string cliRef)
@@ -52,9 +60,11 @@ public class Cadeteria
     {
         if (pedido != null)
         {
+            listadoPedidos = accesoADatosPedidos.Obtener();
             listadoPedidos.Add(pedido);
             pedido.Nro = listadoPedidos.Count;
             pedido.Estado = Estados.Pendiente;
+            accesoADatosPedidos.Guardar(listadoPedidos);
         }
         return pedido;
     }
@@ -65,6 +75,7 @@ public class Cadeteria
         if (pedido != null)
         {
             pedido.CambiarEstado(nuevoEstado);
+            accesoADatosPedidos.Guardar(listadoPedidos);
         }
         return pedido;
     }
@@ -76,6 +87,7 @@ public class Cadeteria
         if (pedido != null & cadete != null)
         {
             pedido.IdCadete = idCadN;
+            accesoADatosPedidos.Guardar(listadoPedidos);
         }
         return pedido;
     }
@@ -100,6 +112,7 @@ public class Cadeteria
             if (p.Nro == idPed)
             {
                 p.IdCadete = idCad;
+                accesoADatosPedidos.Guardar(listadoPedidos);
                 return p;
             }
         }

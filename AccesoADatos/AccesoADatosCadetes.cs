@@ -16,4 +16,13 @@ public class AccesoADatosCadetes
         }
         return cadetes;
     }
+
+    public void Guardar(List<Cadete> cadetes)
+    {
+        if (File.Exists(path))
+        {
+            string textCadetes = JsonSerializer.Serialize(cadetes);
+            File.WriteAllText(path, textCadetes);
+        }
+    }
 }

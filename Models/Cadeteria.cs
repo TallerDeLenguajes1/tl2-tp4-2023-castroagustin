@@ -8,6 +8,7 @@ public class Cadeteria
     private List<Pedido> listadoPedidos;
     private static Cadeteria instance;
     private AccesoADatosPedidos accesoADatosPedidos;
+    private AccesoADatosCadetes accesoADatosCadetes;
 
     public string Nombre { get => nombre; set => nombre = value; }
     public string Telefono { get => telefono; set => telefono = value; }
@@ -43,6 +44,7 @@ public class Cadeteria
             var accesoADatosPedidos = new AccesoADatosPedidos();
             instance = accesoADatosCadeteria.Obtener();
             instance.accesoADatosPedidos = accesoADatosPedidos;
+            instance.accesoADatosCadetes = accesoADatosCadetes;
             instance.listadoPedidos = accesoADatosPedidos.Obtener();
             instance.listadoCadetes = accesoADatosCadetes.Obtener();
         }
@@ -127,5 +129,29 @@ public class Cadeteria
     public List<Cadete> DevolverCadetes()
     {
         return listadoCadetes;
+    }
+
+    public Pedido ObtenerPedido(int id)
+    {
+        Pedido p = listadoPedidos.Find(p => p.Nro == id);
+        return p;
+    }
+
+    public Cadete ObtenerCadete(int id)
+    {
+        Cadete p = listadoCadetes.Find(c => c.Id == id);
+        return p;
+    }
+
+    public Cadete AgregarCadete(Cadete cadete)
+    {
+        if (cadete != null)
+        {
+            listadoCadetes = accesoADatosCadetes.Obtener();
+            listadoCadetes.Add(cadete);
+            cadete.Id = listadoCadetes.Count;
+            accesoADatosCadetes.Guardar(listadoCadetes);
+        }
+        return cadete;
     }
 }
